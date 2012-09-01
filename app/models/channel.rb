@@ -4,7 +4,7 @@ class Channel < ActiveRecord::Base
 
   default_scope where(:hidden => false)
 
-  has_many :messages
+  has_many :messages, :order => "created_at ASC"
 
   def to_s
     name
