@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/radar/by_star
+  revision: 2da313fe30a6c5cb1703a027ae4e40642fd18734
+  specs:
+    by_star (2.0.0.beta1)
+      activerecord (>= 2.0.0)
+      chronic
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -40,6 +48,7 @@ GEM
       xpath (~> 0.1.4)
     childprocess (0.3.5)
       ffi (~> 1.0, >= 1.0.6)
+    chronic (0.7.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -47,6 +56,14 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.3.3)
+    columnize (0.3.6)
+    debugger (1.2.0)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.1.1)
+      debugger-ruby_core_source (~> 1.1.3)
+    debugger-linecache (1.1.2)
+      debugger-ruby_core_source (>= 1.1.1)
+    debugger-ruby_core_source (1.1.3)
     diff-lcs (1.1.3)
     erubis (2.7.0)
     execjs (1.4.0)
@@ -54,6 +71,7 @@ GEM
     factory_girl (4.0.0)
       activesupport (>= 3.0.0)
     ffi (1.1.5)
+    friendly_id (4.0.8)
     hike (1.2.1)
     i18n (0.6.1)
     journey (1.0.4)
@@ -141,9 +159,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  by_star!
   capybara (= 1.1.2)
   coffee-rails (~> 3.2.1)
+  debugger
   factory_girl (= 4.0.0)
+  friendly_id (= 4.0.8)
   jquery-rails
   pg
   rails (= 3.2.8)

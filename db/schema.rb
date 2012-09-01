@@ -11,10 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20120901105023) do
 
   create_table "channels", :force => true do |t|
-    t.string "name"
+    t.string  "name"
+    t.boolean "hidden", :default => false
   end
 
   create_table "constants", :force => true do |t|
@@ -34,9 +35,10 @@ ActiveRecord::Schema.define(:version => 0) do
   add_index "entries", ["constant_id"], :name => "index_entries_on_constant_id"
 
   create_table "messages", :force => true do |t|
-    t.string  "text"
-    t.integer "channel_id"
-    t.integer "person_id"
+    t.string   "text"
+    t.integer  "channel_id"
+    t.integer  "person_id"
+    t.datetime "created_at"
   end
 
   create_table "people", :force => true do |t|
