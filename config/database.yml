@@ -1,0 +1,9 @@
+development:
+  adapter: postgresql
+  database: railsbot
+  min_messages: warning
+
+test:
+  adapter: postgresql
+  database: railsbot_test
+  min_messages: warning
