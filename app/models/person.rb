@@ -11,6 +11,6 @@ class Person < ActiveRecord::Base
   end
 
   def last_100_messages_by_day
-    messages.order("created_at DESC").group_by { |m| m.created_at.to_date.strftime("%d %B %Y") }
+    messages.includes(:channel).where("channels.hidden = false").order("created_at DESC").group_by { |m| m.created_at.to_date.strftime("%d %B %Y") }
   end
 end
