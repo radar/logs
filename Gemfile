@@ -15,6 +15,9 @@ end
 
 gem 'jquery-rails'
 
+# Because 0.16 causes an "invalid byte error" on the server
+gem 'thor', '0.15.4'
+
 group :development, :test do
   gem 'rspec-rails', '~> 2.10'
   gem 'capybara', '1.1.2'
