@@ -6,5 +6,6 @@ class ChannelsController < ApplicationController
 
   def show
     @channel = Channel.find(params[:name])
+    @messages = @channel.messages.today.includes(:person, :channel)
   end
 end
