@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120901105023) do
+ActiveRecord::Schema.define(:version => 20120901114303) do
 
   create_table "channels", :force => true do |t|
     t.string  "name"
@@ -42,8 +42,9 @@ ActiveRecord::Schema.define(:version => 20120901105023) do
   end
 
   create_table "people", :force => true do |t|
-    t.string  "nick"
-    t.boolean "authorized", :default => false
+    t.string   "nick"
+    t.boolean  "authorized", :default => false
+    t.datetime "created_at"
   end
 
   create_table "tips", :force => true do |t|
