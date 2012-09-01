@@ -2,6 +2,6 @@
 <div class='message'>
   <%= link_to "#", channel_path(message.channel, :anchor => message.id), :name => message.id, :id => message.id, :class => "anchor" %>
   [<%= message.created_at.strftime("%H:%M:%S") %>]
-  <%= link_to message.person, message.person %>: <%= message.text %><br>
+  <%= link_to message.person, message.person %>: <%= message.text.force_encoding('utf-8') %><br>
 </div>
 
