@@ -14,4 +14,9 @@
 
 body {
   font: 14pt "Helvetica Neue";
+  margin: 0 20%;
+}
+
+a {
+  color: #0033ff;
 }

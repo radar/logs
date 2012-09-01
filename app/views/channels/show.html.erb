@@ -1,7 +1,5 @@
 <h1><%= @channel.name %> today</h1>
 
 <div id='messages'>
-  <% @channel.messages.today.each do |message| %>
-    [<%= message.created_at.strftime("%H:%M:%S") %>] <%= message.person.nick %>: <%= message.text %><br>
-  <% end %>
+  <%= render @channel.messages.today %>
 </div>

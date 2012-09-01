@@ -1,0 +1,8 @@
+<h2><%= @person.nick %></h2>
+
+<div id='messages'>
+  <% @person.last_100_messages_by_day.each do |day, messages| %>
+    <h3><%= day %></h3>
+    <%= render messages.sort_by { |a| a.created_at } %>
+  <% end %>
+</div>
