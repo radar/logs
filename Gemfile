@@ -27,5 +27,4 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.10'
   gem 'capybara', '1.1.2'
   gem 'factory_girl', '4.0.0'
-  gem 'debugger'
 end
