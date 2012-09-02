@@ -6,6 +6,7 @@ class ChannelsController < ApplicationController
 
   def show
     @channel = Channel.find(params[:name])
-    @messages = @channel.messages.today.includes(:person, :channel)
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    @messages = @channel.messages.by_day(@date).includes(:person, :channel)
   end
 end

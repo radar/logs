@@ -1,5 +1,16 @@
-<h1><%= @channel.name %> today</h1>
+<h1><%= @channel.name %> 
+  <% if Time.now.to_date == @date %>
+    today
+  <% else %>
+    <%= distance_of_time_in_words(Time.now.to_date, @date) %> ago
+  <% end %>
+  <small>(<%= @date.strftime("%d %b %Y") %>)</small>
+</h1>
+
+<%= render 'pagination' %>
 
 <div id='messages'>
   <%= render @messages %> 
 </div>
+
+<%= render 'pagination' %>
