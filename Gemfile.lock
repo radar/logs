@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/radar/by_star
-  revision: 7b4b05c6b6fb831d9165ecb4f77ac6890547380c
+  revision: a1995e5219f2f0eea68536ceb7e4a481575070e4
   specs:
     by_star (2.0.0.beta1)
       activerecord (~> 3.0)
