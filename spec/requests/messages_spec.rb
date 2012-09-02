@@ -29,12 +29,10 @@ describe 'messages' do
       page.should have_content("Radar: From the past!")
     end
 
-    click_link "forward_one" do
-      within("#messages") do
-        page.should have_content("Radar: This is a test")
-      end
+    click_link "forward_one"
+    within("#messages") do
+      page.should have_content("Radar: This is a test")
     end
-
   end
 
 end
