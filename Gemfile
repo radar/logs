@@ -24,6 +24,7 @@ gem 'jquery-rails'
 gem 'thor'
 
 group :development, :test do
+  gem 'simplecov'
   gem 'rspec-rails', '~> 2.10'
   gem 'capybara', '1.1.2'
   gem 'factory_girl', '4.0.0'
