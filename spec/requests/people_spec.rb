@@ -19,7 +19,14 @@ describe 'people' do
       page.should_not have_content("Other")
     end
   end
-  
+
+  it "shows a message when user has no messages" do
+    visit person_path(person)
+    within("#messages") do
+      page.should have_content("There are no messages... yet.")
+    end
+  end
+
   it "should not show hidden messages" do
     channel = FactoryGirl.create(:channel, :hidden => true)
     channel.messages.create(:person => person, :text => "Crouching Tiger")

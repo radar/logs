@@ -12,6 +12,13 @@ describe 'Channels' do
     end
   end
 
+  it "tells people about no messages yet" do
+    visit channel_path(Channel.first)
+    within("#messages") do
+      page.should have_content("There are no messages... yet.")
+    end
+  end
+
   it "cannot see a hidden channel" do
     FactoryGirl.create(:channel, :name => "sekret", :hidden => true)
     visit root_path

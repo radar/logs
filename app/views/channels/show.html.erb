@@ -10,6 +10,9 @@
 <%= render 'pagination' %>
 
 <div id='messages'>
+  <% unless @messages.exists? %>
+    There are no messages... yet.
+  <% end %>
   <%= render @messages %> 
 </div>
 
