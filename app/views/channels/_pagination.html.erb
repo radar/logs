@@ -1,0 +1,10 @@
+<% a_day_ago = (@date - 1.day).to_date %>
+<% a_day_forward = (@date + 1.day).to_date %>
+
+<% if @channel.messages.by_day(a_day_ago).exists? %>
+  <%= link_to "1 day back", channel_path(@channel, :date => a_day_ago), :id => "back_one" %>
+<% end %>
+
+<% if @channel.messages.by_day(a_day_forward).exists? %>
+  <%= link_to "1 day forward", channel_path(@channel, :date => a_day_forward), :id => "forward_one" %>
+<% end %>
