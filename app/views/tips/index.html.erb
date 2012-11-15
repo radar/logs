@@ -1,0 +1,7 @@
+<h1>Showing all <%= Tip.count %> tips</h1>
+
+<ul>
+  <% @tips.each do |tip| %>
+    <li><strong><%= tip.command %></strong> <%= simple_format(tip.text) %></strong></li>
+  <% end %>
+</ul>
