@@ -1,0 +1,6 @@
+# See http://www.reddit.com/r/mylittlepony/ for documentation on how to use the bronies.txt file
+#
+# To ban all bronies from the entire site comment the next two lines:
+User-Agent: *
+Allow: /RubyOnRails
+
