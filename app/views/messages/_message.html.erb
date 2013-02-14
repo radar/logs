@@ -1,7 +1,6 @@
 <% #encoding: utf-8 %>
 <div class='message <%= message.type %>'>
-  <%= link_to "#", channel_path(message.channel, :anchor => message.id, :date => message.created_at.to_date), :name => message.id, :id => message.id, :class => "anchor" %>
-  [<%= message.created_at.strftime("%H:%M:%S") %>]
+  <%= link_to '[' + message.created_at.strftime("%H:%M:%S") + ']', channel_path(message.channel, :anchor => message.id, :date => message.created_at.to_date), :name => message.id, :id => message.id, :class => "anchor" %>
   <%= link_to message.person, message.person %>: <%= I18n.transliterate(message.text) %><br>
 </div>
 
