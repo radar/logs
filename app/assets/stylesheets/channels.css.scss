@@ -6,9 +6,23 @@
   font: 12pt Inconsolata, Menlo, "Courier New", monospace;
 }
 
+
 .message {
   margin-top: 3px;
   margin-bottom: 3px;
+}
+
+.kick {
+  color: #aa0000;
+  font-weight: bold;
+}
+
+.mode {
+  color: #afafaf;
+}
+
+.mode a {
+  color: mix(#0033ff, #afafaf);
 }
 
 .highlight {
