@@ -5,7 +5,7 @@ class ChannelsController < ApplicationController
   end
 
   def show
-    @channel = Channel.find_by_name!(params[:name])
+    @channel = Channel.where("NAME ILIKE ?", params[:name]).first
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
     @messages = @channel.messages.by_day(@date).includes(:person, :channel)
   end
