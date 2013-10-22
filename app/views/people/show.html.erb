@@ -9,5 +9,5 @@
     <h3><%= day %></h3>
     <%= render messages.sort_by { |a| a.created_at } %>
   <% end %>
-  <%= paginate(@messages)
+  <%= paginate(@messages) %>
 </div>

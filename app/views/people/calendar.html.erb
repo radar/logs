@@ -1,0 +1,9 @@
+<h2><%= @person.nick %>'s activity</h2>
+
+<div id='messages'>
+  <ul>
+    <% @calendar.each do |day| %>
+      <li><strong><%= day.date %></strong>: <%= day.count %> messages</li>
+    <% end %>
+  </ul>
+</div>
