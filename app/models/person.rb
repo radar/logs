@@ -11,7 +11,8 @@ class Person < ActiveRecord::Base
   def calendar
     Message.select("COUNT(*) as count, created_at::DATE as date").
     where(:person_id => self.id).
-    group("created_at::DATE")
+    group("created_at::DATE").
+    order("date DESC")
   end
 
   def public_messages
