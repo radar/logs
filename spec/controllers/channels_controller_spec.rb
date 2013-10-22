@@ -9,7 +9,7 @@ describe ChannelsController do
     end
 
     it "can find a channel regardless of case" do
-      Channel.create!({:name => "rubyonrails"}, :without_protection => true)
+      Channel.create!(:name => "rubyonrails")
       get 'show', :name => 'RuByOnRaIlS'
       response.should be_success
     end

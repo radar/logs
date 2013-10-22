@@ -24,12 +24,12 @@ describe 'messages' do
 
   it "paginating" do
     visit channel_path(channel)
-    click_link "back_one"
+    all("#back_one").first.click
     within("#messages") do
       page.should have_content("Radar: From the past!")
     end
 
-    click_link "forward_one"
+    all("#forward_one").first.click
     within("#messages") do
       page.should have_content("Radar: This is a test")
     end

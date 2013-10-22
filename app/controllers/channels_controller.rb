@@ -6,7 +6,7 @@ class ChannelsController < ApplicationController
 
   def show
     @channel = Channel.where("NAME ILIKE ?", params[:name]).first
-    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today.to_time.in_time_zone("UTC") 
     @messages = @channel.messages.by_day(@date).includes(:person, :channel)
   end
 end

@@ -9,45 +9,49 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120901114303) do
+ActiveRecord::Schema.define(version: 20130423062927) do
 
-  create_table "channels", :force => true do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "channels", force: true do |t|
     t.string  "name"
-    t.boolean "hidden", :default => false
+    t.boolean "hidden", default: false
   end
 
-  create_table "constants", :force => true do |t|
+  create_table "constants", force: true do |t|
     t.string  "name"
     t.string  "url"
     t.integer "api_id"
   end
 
-  add_index "constants", ["api_id"], :name => "index_constants_on_api_id"
+  add_index "constants", ["api_id"], name: "index_constants_on_api_id", using: :btree
 
-  create_table "entries", :force => true do |t|
+  create_table "entries", force: true do |t|
     t.string  "name"
     t.string  "url"
     t.integer "constant_id"
   end
 
-  add_index "entries", ["constant_id"], :name => "index_entries_on_constant_id"
+  add_index "entries", ["constant_id"], name: "index_entries_on_constant_id", using: :btree
 
-  create_table "messages", :force => true do |t|
+  create_table "messages", force: true do |t|
     t.string   "text"
     t.integer  "channel_id"
     t.integer  "person_id"
     t.datetime "created_at"
+    t.string   "type"
   end
 
-  create_table "people", :force => true do |t|
+  create_table "people", force: true do |t|
     t.string   "nick"
-    t.boolean  "authorized", :default => false
+    t.boolean  "authorized", default: false
     t.datetime "created_at"
   end
 
-  create_table "tips", :force => true do |t|
+  create_table "tips", force: true do |t|
     t.string "command"
     t.text   "text"
   end

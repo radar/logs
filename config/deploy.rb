@@ -11,7 +11,7 @@ role :app, "logs.ryanbigg.com"
 role :db,  "logs.ryanbigg.com", :primary => true
 
 set :user, "radar"
-set :deploy_to, "/websites/logs"
+set :deploy_to, "/var/www/logs"
 
 set :use_sudo, false
 

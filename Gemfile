@@ -5,15 +5,16 @@ end
 
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '4.0.0'
 
 gem 'pg'
 gem 'friendly_id', '4.0.8'
 gem 'by_star', :git => "git://github.com/radar/by_star"
+gem 'kaminari', '0.14.1'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails',   '~> 4.0.0'
+  gem 'coffee-rails', '~> 4.0.0'
 
   gem 'uglifier', '>= 1.0.3'
   gem 'therubyracer'
@@ -26,6 +27,8 @@ gem 'thor'
 group :development, :test do
   gem 'simplecov'
   gem 'rspec-rails', '~> 2.10'
-  gem 'capybara', '1.1.2'
+  gem 'capybara', '2.1'
   gem 'factory_girl', '4.0.0'
+  gem 'pry'
+  gem 'launchy'
 end
