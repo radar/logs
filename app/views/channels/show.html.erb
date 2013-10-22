@@ -1,5 +1,5 @@
 <h1><%= @channel.name %> 
-  <% if Time.now.to_date == @date %>
+  <% if Time.zone.now.to_date == @date.to_date %>
     today
   <% else %>
     <%= distance_of_time_in_words(Time.now.to_date, @date) %> ago
