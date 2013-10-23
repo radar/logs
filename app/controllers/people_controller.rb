@@ -16,7 +16,7 @@ class PeopleController < ApplicationController
   private
 
   def find_person
-    @person = Person.find_by_nick!(params[:nick])
+    @person = Person.where("nick ILIKE ?", params[:nick]).first
   end
 
 end
