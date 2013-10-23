@@ -1,8 +1,10 @@
 <h2><%= link_to "#{@person.nick}'s", @person %> activity</h2>
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
-<% first_message_year = @person.messages.reorder("created_at ASC").first.created_at.year %>
-<% last_message_year = @person.messages.reorder("created_at DESC").first.created_at.year %>
+<% first_message_year = @person.messages.reorder("created_at ASC").first.try(:created_at).try(:year) %>
+<% last_message_year = @person.messages.reorder("created_at DESC").first.try(:created_at).try(:year) %>
+<% first_message_year ||= Time.now.year %>
+<% last_message_year ||= Time.now.year + 1 %>
 <script>
 
 var width = 960,
