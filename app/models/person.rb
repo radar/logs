@@ -8,7 +8,7 @@ class Person < ActiveRecord::Base
     nick
   end
 
-  def calendar
+  def activity
     Message.select("COUNT(*) as count, created_at::DATE as date").
     where(:person_id => self.id).
     group("created_at::DATE").

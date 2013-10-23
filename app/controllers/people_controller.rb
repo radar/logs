@@ -6,10 +6,10 @@ class PeopleController < ApplicationController
     @messages = @person.public_messages.page(params[:page]).per(250)
   end
 
-  def calendar
+  def activity
     find_person
-    @calendar = @person.calendar
-    respond_with(@calendar)
+    @activity = @person.activity
+    respond_with(@activity)
     expires_in 1.day
   end
 
