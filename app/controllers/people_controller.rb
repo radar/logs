@@ -10,6 +10,7 @@ class PeopleController < ApplicationController
     find_person
     @calendar = @person.calendar
     respond_with(@calendar)
+    expires_in 1.day
   end
 
   private
