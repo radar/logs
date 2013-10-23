@@ -50,7 +50,7 @@ svg.selectAll(".month")
     .attr("class", "month")
     .attr("d", monthPath);
 
-d3.json("/p/<%= @person.nick %>/calendar.json", function(error, json) {
+d3.json("/p/<%= @person.nick %>/activity.json", function(error, json) {
   var data = d3.nest()
     .key(function(d) { return d.date; })
     .rollup(function(d) { return d[0].count; })

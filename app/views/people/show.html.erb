@@ -1,5 +1,7 @@
 <h2><%= @person.nick %></h2>
 
+<%= link_to "Activity Graph", person_activity_path(@person) %>
+
 <div id='messages'>
   <% if @messages.empty? %>
     There are no messages... yet.
