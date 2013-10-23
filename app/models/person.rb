@@ -10,7 +10,7 @@ class Person < ActiveRecord::Base
 
   def activity
     Message.select("COUNT(*) as count, created_at::DATE as date").
-    where(:person_id => self.id).
+    where(:person_id => self.id, :hidden => false).
     group("created_at::DATE").
     order("date DESC")
   end
