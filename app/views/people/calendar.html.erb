@@ -1,6 +1,8 @@
 <h2><%= @person.nick %>'s activity</h2>
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
+<% first_message_year = @person.messages.reorder("created_at ASC").first.created_at.year %>
+<% last_message_year = @person.messages.reorder("created_at DESC").first.created_at.year %>
 <script>
 
 var width = 960,
@@ -16,7 +18,7 @@ var color = d3.scale.quantize()
     .range(d3.range(5).map(function(d) { return "q" + d + "-5"; }));
 
 var svg = d3.select("body").selectAll("svg")
-    .data(d3.range(2012, 2014))
+    .data(d3.range(<%= first_message_year %>, <%= last_message_year + 1 %>))
   .enter().append("svg")
     .attr("width", width)
     .attr("height", height)
