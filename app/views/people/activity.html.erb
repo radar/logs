@@ -17,7 +17,7 @@ var day = d3.time.format("%w"),
 
 var color = d3.scale.quantize()
     .domain([0, 250])
-    .range(d3.range(5).map(function(d) { return "q" + d + "-5"; }));
+    .range(d3.range(12).map(function(d) { return "q" + d + "-11"; }));
 
 var svg = d3.select("body").selectAll("svg")
     .data(d3.range(<%= first_message_year %>, <%= last_message_year + 1 %>))
