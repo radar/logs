@@ -1,34 +1,24 @@
-require 'bundler/capistrano'
-load 'deploy/assets'
+set :application, 'logs'
+set :repo_url, 'git://github.com/radar/logs'
+set :deploy_to, '/var/www/logs'
+set :bundle_flags, '--deployment'
+set :linked_files, %w{config/database.yml}
 
-set :application, "logs"
-set :repository,  "git://github.com/radar/logs"
+set :rbenv_type, :system # or :system, depends on your rbenv setup
+set :rbenv_ruby, '2.1.0'
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 
-set :scm, :git
-
-role :web, "logs.ryanbigg.com"
-role :app, "logs.ryanbigg.com"
-role :db,  "logs.ryanbigg.com", :primary => true
-
-set :user, "radar"
-set :deploy_to, "/var/www/logs"
-
-set :use_sudo, false
-
-after "deploy:restart", "deploy:cleanup"
+set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 
 namespace :deploy do
-  task :start do ; end
-  task :stop do ; end
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      execute :touch, release_path.join('tmp/restart.txt')
+    end
   end
-end
 
-task :symlink_database_yml do
-  run "rm #{release_path}/config/database.yml"
-  run "ln -sfn #{shared_path}/config/database.yml 
-       #{release_path}/config/database.yml"
-end
-after "bundle:install", "symlink_database_yml"
+  after :finishing, 'deploy:cleanup'
 
+end
