@@ -2,7 +2,7 @@
   <% if Time.zone.now.to_date == @date.to_date %>
     today
   <% else %>
-    <%= distance_of_time_in_words(Time.now.to_date, @date) %> ago
+    <%= distance_of_time_in_words(Time.zone.now.to_date, @date) %> ago
   <% end %>
   <small>(<%= @date.strftime("%d %b %Y") %>)</small>
 </h1>
