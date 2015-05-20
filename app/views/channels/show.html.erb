@@ -9,6 +9,12 @@
 
 <%= render 'pagination' %>
 
+<p>
+  <label for='show_events'>
+    <input id='show_events' type='checkbox'> Show joins + parts
+  </label>
+</p>
+
 <div id='messages'>
   <% unless @messages.exists? %>
     There are no messages... yet.

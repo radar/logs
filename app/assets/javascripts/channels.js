@@ -9,4 +9,15 @@ $(document).ready(function() {
   }
 
   $('.anchor').click(function() { $(this).highlight() });
+
+  $('.join, .part').hide();
+
+  $('#show_events').change(function (event) {
+    var target = $(event.target);
+    if (target.is(":checked")) {
+      $('.join, .part').show();
+    } else {
+      $('.join, .part').hide();
+    }
+  });
 })
