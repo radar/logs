@@ -18,6 +18,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 gem 'thor'
+gem 'responders'
 
 group :development, :test do
   gem 'simplecov'
@@ -29,8 +30,9 @@ group :development, :test do
 end
 
 group :development do
-  gem 'capistrano', '~> 3.0'
-  gem 'capistrano-bundler', '1.1.1'
-  gem 'capistrano-rails', '1.1.0'
+  gem 'highline'
+  gem 'capistrano', '~> 3.4'
+  gem 'capistrano-bundler', '1.1.4'
+  gem 'capistrano-rails', '1.1.3'
   gem 'capistrano-rbenv', '~> 2.0'
 end
