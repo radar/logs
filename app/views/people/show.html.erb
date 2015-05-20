@@ -2,6 +2,12 @@
 
 <%= link_to "Activity Graph", person_activity_path(@person) %>
 
+<p>
+  <label for='show_events'>
+    <input id='show_events' type='checkbox'> Show joins + parts
+  </label>
+</p>
+
 <div id='messages'>
   <% if @messages.empty? %>
     There are no messages... yet.
