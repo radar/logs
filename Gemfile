@@ -5,20 +5,15 @@ end
 
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.0'
+gem 'rails', '4.2.1'
 
 gem 'pg'
 gem 'friendly_id', '4.0.8'
 gem 'by_star', :git => "git://github.com/radar/by_star"
 gem 'kaminari', '0.14.1'
 
-group :assets do
-  gem 'sass-rails',   '~> 4.0.0'
-  gem 'coffee-rails', '~> 4.0.0'
-
-  gem 'uglifier', '>= 1.0.3'
-  gem 'therubyracer'
-end
+gem 'sass-rails',   '~> 4.0.0'
+gem 'coffee-rails', '~> 4.0.0'
 
 gem 'jquery-rails'
 

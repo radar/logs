@@ -10,14 +10,18 @@ channel.name = "seeds"
 channel.save
 
 radar = Person.create nick: "Radar"
-wmoxan = Person.create nick: "wmoxam"
+wmoxam = Person.create nick: "wmoxam"
 
 channel.messages.create person: radar, text: "oh you crazy kids"
-channel.messages.create person: wmoxan, text: "Who U callin' crazy?"
+channel.messages.create person: wmoxam, text: "Who U callin' crazy?"
 channel.messages.create person: radar, text: "wmoxam: You're not a kid, ergo..."
-channel.messages.create person: wmoxan, text: "Who U callin' crazy?"
+channel.messages.create person: wmoxam, text: "Who U callin' crazy?"
 channel.messages.create person: radar, text: "wmoxam: YOU."
-channel.messages.create person: wmoxan, text: ":-("
+channel.messages.create person: wmoxam, text: ":-("
+channel.messages.create person: wmoxam, text: "wmoxam kicked Radar: NO U", type: "kick"
+channel.messages.create person: wmoxam, text: "+b Radar", type: "mode"
+channel.messages.create person: wmoxam, text: "has left #seeds", type: "part"
+channel.messages.create person: wmoxam, text: "has joined #seeds", type: "join"
 
 long_messages = Channel.new
 long_messages.name = "long_messages"

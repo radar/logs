@@ -17,12 +17,12 @@
   font-weight: bold;
 }
 
-.mode {
+.mode, .join, .part {
   color: #afafaf;
-}
 
-.mode a {
-  color: mix(#0033ff, #afafaf);
+  a {
+    color: mix(#0033ff, #afafaf);
+  }
 }
 
 .highlight {
