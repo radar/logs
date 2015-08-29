@@ -7,15 +7,18 @@ set :linked_dirs, %w{bin log tmp/backup tmp/pids tmp/cache}
 
 set :chruby_ruby, 'ruby-2.2.3'
 
+
 namespace :deploy do
 
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      execute :touch, release_path.join('tmp/restart.txt')
+      execute :sudo, "service unicorn-logs restart"
     end
   end
 
+  after "deploy:published", "deploy:restart"
   after :finishing, 'deploy:cleanup'
 
 end
+
