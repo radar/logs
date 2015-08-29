@@ -22,6 +22,9 @@ channel.messages.create person: wmoxam, text: "wmoxam kicked Radar: NO U", type:
 channel.messages.create person: wmoxam, text: "+b Radar", type: "mode"
 channel.messages.create person: wmoxam, text: "has left #seeds", type: "part"
 channel.messages.create person: wmoxam, text: "has joined #seeds", type: "join"
+channel.messages.create person: wmoxam, text: "⚡️ 😃"
+
+wmoxam.messages.create text: "Goes away", type: "quit"
 
 long_messages = Channel.new
 long_messages.name = "long_messages"

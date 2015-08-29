@@ -5,7 +5,7 @@ end
 
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.4'
 
 gem 'pg'
 gem 'friendly_id', '4.0.8'
@@ -34,5 +34,7 @@ group :development do
   gem 'capistrano', '~> 3.4'
   gem 'capistrano-bundler', '1.1.4'
   gem 'capistrano-rails', '1.1.3'
-  gem 'capistrano-rbenv', '~> 2.0'
+  gem 'capistrano-chruby'
 end
+
+gem 'unicorn'
